@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Card Approval Prediction</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #85f2f6;
+        }
+        .navbar-brand {
+            display: block;
+            margin: auto;
+            color: #f04ada;
+            font-weight: bold;
+            font-family: "Helvetica";
+        }
+        .submit-button {
+            display: block;
+            margin: auto;
+        }
+        p {
+            text-align: center;
+        }
+        p:hover {
+            filter: brightness(250%) saturate(100%);
+        }
+        .card {
+            display: block;
+            margin: auto;
+            text-align: center;
+        }
+        h5 {
+            font-weight: bold;
+            font-family: "Helvetica",sans;
+            color: #0c3c02;
+            font-size: 1.8rem;
+        }
+        h1{
+            color: #bc0707;
+            font-family: 'Georgia', serif;
+            font-size: 3rem;
+            font-weight: bold;
+        }
+        .first_row {
+            margin-top: 5rem;
+        }
+        .last_row {
+            margin-bottom: 2rem;
+        }
+        .card {
+            margin: 0 auto;
+            float: none;
+            margin-bottom: 10px;
+            background-color: #99e889;
+            border: 2px solid #8f139d;
+            border-width: 0.5rem;
+            size: 6rem;
+        }
+        .copyright{
+            color: #3e0ada;
+            font-size: 1.5rem;
+            font-family: 'Arial',sans-serif;
+            font-weight: bold;
+        }
+        .predict-dec {
+            text-align: center;
+            font-weight: bold;
+            color: #4a2603;
+            font-size: 2rem;
+            font-family: 'Helvetica',sans-serif;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <span class="navbar-brand mb-0 h1"><h1>Credit Card Approval Prediction</h1></span>
+    </nav>
+    <div class="container">
+        <form action="/predict" method="post">
+            <div class="row first_row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Total Good Debt:</h5>
+                            <input type="number" min="1" max="61" step="1" name="total_good_debt" id="total_good_debt" required="required">
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Is applicant's gender male?</h5>
+                            <select name="applicant_gender_male" id="applicant_gender_male">
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Is job a source of your employment?</h5>
+                            <select name="income_type_working" id="income_type_working">
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Is your job title laborers?</h5>
+                            <select name="job_title_laborers" id="job_title_laborers">
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row"> 
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Is your family status married?</h5>
+                            <select name="family_status_married" id="family_status_married">
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Total Income:</h5>
+                            <input type="number" min="27000" max="360000" step="1" name="total_income" id="total_income" required="required">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="card-body">
+                                <h5 class="card-title">Total Children:</h5>
+                                <input type="number" min="0.0" max="2.5" step="1.0" name="total_children" id="total_children" required="required">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Total years of work experience:</h5>
+                            <input type="number" min="1.0" max="20.5" step="0.1" name="years_of_working" id="years_of_working" required="required">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Applicant Age:</h5>
+                            <input type="number" min="21" max="68" step="1" name="applicant_age" id="applicant_age" required="required">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Is being a state servant your mode of employment?</h5>
+                            <select name="income_type_state_servant" id="income_type_state_servant">
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br><br>
+            <!-- Submit -->
+            <input type="submit" value="Submit" class="btn btn-primary submit-button">
+        </form>
+        <br>
+        <h3 class="predict-dec">{{ prediction_text }}</h3> 
+        <br>
+        <p class="copyright">Copyrights 2023 Sayam Kumar</p>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+</body>
+</html>

@@ -2,7 +2,7 @@ import pytest, joblib, logging
 import pandas as pd
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, roc_auc_score
 
-pipeline = joblib.load('pipeline.pkl')
+pipeline = joblib.load('backup_pipeline.pkl')
 
 # Configure the logger
 logging.basicConfig(filename='model_testing.log', level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')

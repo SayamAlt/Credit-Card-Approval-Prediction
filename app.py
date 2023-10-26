@@ -4,7 +4,7 @@ import pandas as pd
 
 app = Flask(__name__)
 
-pipeline = joblib.load('pipeline.pkl')
+pipeline = joblib.load('backup_pipeline.pkl')
 
 @app.route("/")
 def home():

@@ -5,6 +5,4 @@ numpy
 pytest
 pandas
 scikit-learn
-catboost
 imblearn
-PyYAML

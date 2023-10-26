@@ -4,7 +4,7 @@ from sklearn.preprocessing import OneHotEncoder, StandardScaler, OrdinalEncoder,
 from sklearn.compose import ColumnTransformer
 import logging, joblib, warnings
 warnings.filterwarnings('ignore')
-from catboost import CatBoostClassifier
+from sklearn.ensemble import ExtraTreesClassifier 
 from sklearn.model_selection import train_test_split, RandomizedSearchCV, cross_val_score
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, roc_auc_score
 from sklearn.pipeline import Pipeline
@@ -83,11 +83,20 @@ def train_and_evaluate_model(model):
     logger.info("Evaluation metrics - Accuracy: %.2f, Precision: %.2f, Recall: %.2f, F1 Score: %.2f, ROC-AUC Score: %.2f", accuracy, precision, recall, f1, roc_auc)
     return model, accuracy
 
-model, baseline_acc = train_and_evaluate_model(CatBoostClassifier(silent=True))
+model, baseline_acc = train_and_evaluate_model(ExtraTreesClassifier())
 
-param_grid = {'learning_rate': [0.2,0.4,0.7,1],
-              'n_estimators': [200,500,1000]
+param_grid = {'n_estimators': [100,300,600,1000],
+             'criterion': ['gini','entropy','log_loss'],
+             'max_features': ['auto','sqrt','log2'],
+             'bootstrap': [True,False],
+             'class_weight': ['balanced','balanced_subsample'],
+             'oob_score': [True,False],
+             'warm_start': [True,False],
+             'max_samples': [0.2,0.4,0.7,1]
              }
+
+grid_et = RandomizedSearchCV(ExtraTreesClassifier(),param_grid,verbose=4)
+train_and_evaluate_model(grid_et)
 
 grid_et = RandomizedSearchCV(model,param_grid,cv=5,verbose=0)
 optimized_model, optimized_acc = train_and_evaluate_model(grid_et)
@@ -97,7 +106,7 @@ if baseline_acc < optimized_acc:
 
 avg_cv_scores = cross_val_score(model,X_test,y_test,scoring='accuracy',cv=5,verbose=2)
 mean_score = round(np.mean(avg_cv_scores),4) * 100
-logger.info("Mean Cross Validation Performance of Cat Boost Classifier: %.2f%",mean_score)
+logger.info("Mean Cross Validation Performance of Extra Trees Classifier: %.2f%",mean_score)
 
 pipeline = Pipeline(steps=[
     ('transformer',transformer),

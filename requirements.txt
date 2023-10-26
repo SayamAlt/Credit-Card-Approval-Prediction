@@ -1,6 +1,9 @@
 joblib
 flask
 gunicorn
+numpy
+pytest
 pandas
 scikit-learn
 catboost
+imblearn

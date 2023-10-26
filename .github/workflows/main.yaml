@@ -34,7 +34,7 @@ jobs:
           -H "Content-Type: application/json" \
           --data '{
             "image": "credit_card_approval_predictor:latest",
-            "serviceId": "srv-ckl722rj89us73coe160"  # Replace with your Render service ID
+            "serviceId": "srv-ckteii8168ec73bt59q0"  # Replace with your Render service ID
           }' \
           https://api.render.com/v1/deploys
 

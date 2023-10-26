@@ -21,6 +21,12 @@ jobs:
     - name: Install dependencies
       run: pip install -r requirements.txt  # Replace with your requirements file
       
+    - name: Re-train model on every push
+      run: python retrain.py  # Replace with your training script
+
+    - name: Test model on custom inputs
+      run: pytest -p no:cacheprovider --disable-warnings
+      
     - name: Build Docker image
       run: |
         docker build -t credit_card_approval_predictor:latest .

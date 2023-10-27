@@ -1,4 +1,12 @@
-2023-10-27 04:51:37,343 - tests/model_testing - INFO - The model's prediction matched the expected output.
-2023-10-27 04:51:37,356 - tests/model_testing - INFO - The model's prediction matched the expected output.
-2023-10-27 04:51:37,364 - tests/model_testing - INFO - The model's prediction matched the expected output.
-2023-10-27 04:51:37,373 - tests/model_testing - ERROR - The model's prediction didn't match with the expected output.
+2023-10-27 18:31:27,306 - tests/model_testing - INFO - The model's prediction matched the expected output.
+2023-10-27 18:31:27,316 - tests/model_testing - INFO - The model's prediction matched the expected output.
+2023-10-27 18:31:27,317 - tests/model_testing - INFO - The model's prediction matched the expected output.
+2023-10-27 18:31:27,331 - tests/model_testing - ERROR - The model's prediction didn't match with the expected output.
+2023-10-27 18:31:27,334 - tests/model_testing - INFO - The model's prediction matched the expected output.
+2023-10-27 18:31:27,346 - tests/model_testing - INFO - The model's prediction matched the expected output.
+2023-10-27 18:31:51,618 - tests/model_testing - INFO - The model's prediction matched the expected output.
+2023-10-27 18:31:51,630 - tests/model_testing - INFO - The model's prediction matched the expected output.
+2023-10-27 18:31:51,637 - tests/model_testing - INFO - The model's prediction matched the expected output.
+2023-10-27 18:31:51,646 - tests/model_testing - ERROR - The model's prediction didn't match with the expected output.
+2023-10-27 18:31:51,654 - tests/model_testing - INFO - The model's prediction matched the expected output.
+2023-10-27 18:31:51,663 - tests/model_testing - INFO - The model's prediction matched the expected output.

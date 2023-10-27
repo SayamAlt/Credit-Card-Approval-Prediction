@@ -1,1 +1,2 @@
-2023-10-27 04:51:37,373 - tests/model_testing - ERROR - The model's prediction didn't match with the expected output.
+2023-10-27 18:31:27,331 - tests/model_testing - ERROR - The model's prediction didn't match with the expected output.
+2023-10-27 18:31:51,646 - tests/model_testing - ERROR - The model's prediction didn't match with the expected output.

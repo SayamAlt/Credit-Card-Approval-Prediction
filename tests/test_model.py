@@ -56,6 +56,16 @@ test_cases = [
     {
         "input": pd.DataFrame([[6,1,0,0,0,171000,0,1,32,0]],columns=column_names),
         "expected_output": 0
+    },
+    # Test Case 5
+    {
+        "input": pd.DataFrame([[33,0,1,1,1,157500,0,5,28,0]],columns=column_names),
+        "expected_output": 1
+    },
+    # Test Case 6
+    {
+        "input": pd.DataFrame([[1,0,0,0,0,157500,1,7,43,0]],columns=column_names),
+        "expected_output": 0
     }
 ]
 

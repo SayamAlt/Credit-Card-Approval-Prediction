@@ -69,7 +69,7 @@ Before you begin, ensure you have met the following requirements:
     <li>Docker</li>
     <li>Git</li>
     <li>GitHub account</li>
-    <li>SQLite database (create credit_application.db for storing data during prediction)</li>
+    <li>SQLite database (create credit_card_application.db for storing data during prediction)</li>
 </ul>
 
 ## Installation
@@ -116,11 +116,11 @@ pytest tests/test_model.py
 
 ## Model Retraining
 
-The model retraining script, retrain.py, is automatically triggered on every push to the repository. It fetches newly obtained data from the SQLite database (credit_application.db) and re-trains the model. Additionally, it performs hyperparameter tuning and cross validation to fine-tune the model and enhance its performance.
+The model retraining script, retrain.py, is automatically triggered on every push to the repository. It fetches newly obtained data from the SQLite database (credit_card_application.db) and re-trains the model. Additionally, it performs hyperparameter tuning and cross validation to fine-tune the model and enhance its performance.
 
 ## Database Integration
 
-The SQLite database (credit_application.db) is used for storing newly obtained data during prediction and for model retraining.
+The SQLite database (credit_card_application.db) is used for storing newly obtained data during prediction and for model retraining.
 
 ## Contributing
 

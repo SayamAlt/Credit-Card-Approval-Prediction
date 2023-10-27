@@ -6,18 +6,19 @@
 
 This project is a Credit Card Approval Prediction system that uses machine learning techniques to evaluate credit card applications and predict whether an applicant is likely to be approved or rejected. The project includes a Flask web application for making predictions, Continuous Integration/Continuous Deployment (CI/CD) setup using Docker and GitHub Actions, model testing with the pytest module, and automatic model retraining on every push to the repository.
 
-Table of Contents
-Context
-Project Structure
-Prerequisites
-Installation
-Usage
-CI/CD Workflow
-Testing
-Model Retraining
-Database Integration
-Contributing
-License
+## Table of Contents
+
+- [Context](#context)
+- [Project Structure](#project-structure)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Usage](#usage)
+- [CI/CD Workflow](#cicd-workflow)
+- [Testing](#testing)
+- [Model Retraining](#model-retraining)
+- [Database Integration](#database-integration)
+- [Contributing](#contributing)
+- [License](#license)
 
 ## Context
 
@@ -108,13 +109,13 @@ Clone this repository:
 
 bash
 
-git clone https://github.com/your-username/credit-card-approval.git
+git clone https://github.com/SayamAlt/credit-card-approval-prediction.git
 
 Navigate to the project directory:
 
 bash
 
-cd credit-card-approval
+cd credit-card-approval-prediction
 
 ## Install Python dependencies:
 

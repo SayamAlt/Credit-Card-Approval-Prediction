@@ -88,7 +88,7 @@ if baseline_acc < optimized_acc:
 
 avg_cv_scores = cross_val_score(model,X_test,y_test,scoring='accuracy',cv=5,verbose=2)
 mean_score = round(np.mean(avg_cv_scores),4) * 100
-logger.info("Mean Cross Validation Performance of Extra Trees Classifier: %.2f%",mean_score)
+logger.info(f"Mean Cross Validation Performance of Extra Trees Classifier: {round(mean_score,2)}%")
 
 pipeline = Pipeline(steps=[
     ('transformer',transformer),

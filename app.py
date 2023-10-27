@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-import joblib
+import joblib, sqlite3
 import pandas as pd
 
 app = Flask(__name__)
@@ -45,6 +45,23 @@ def predict():
                                                                    'Income_Type_State servant'])
         pred = pipeline.predict(data)[0]
         
+        complete_data = [total_good_debt,
+                        applicant_gender_male,
+                        income_type_working,
+                        job_title_laborers,
+                        family_status_married,
+                        total_income,
+                        total_children,
+                        years_of_working,
+                        applicant_age,
+                        income_type_state_servant,
+                        pred]
+        conn = sqlite3.connect("credit_card_application.db")
+        cursor = conn.cursor()
+        cursor.execute(f"INSERT INTO CREDIT_APPLICATION VALUES {tuple(complete_data)}")
+        conn.commit()
+        conn.close()
+
         if pred == 0:
             return render_template('index.html',prediction_text="Your credit card application won't be approved.")
         elif pred == 1:

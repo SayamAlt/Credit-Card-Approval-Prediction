@@ -2,7 +2,7 @@ import pytest, joblib, logging, warnings
 warnings.filterwarnings("ignore")
 import pandas as pd
 
-pipeline = joblib.load('pipeline.pkl')
+pipeline = joblib.load('backup_pipeline.pkl')
 
 # Configure the logger
 logging.basicConfig(filename='tests/model_testing.log', level=logging.INFO)

@@ -60,8 +60,6 @@ At present, with the development of machine learning algorithms. More predictive
 
 The project has the following structure:
 
-bash
-
 credit-card-approval-prediction/
 │
 ├── app/
@@ -100,34 +98,26 @@ Before you begin, ensure you have met the following requirements:
     <li>Docker</li>
     <li>Git</li>
     <li>GitHub account</li>
-    <li>SQLite database (create database.db for storing data during prediction)</li>
+    <li>SQLite database (create credit_application.db for storing data during prediction)</li>
 </ul>
 
 ## Installation
 
 Clone this repository:
 
-bash
-
 git clone https://github.com/SayamAlt/credit-card-approval-prediction.git
 
 Navigate to the project directory:
 
-bash
-
 cd credit-card-approval-prediction
 
 ## Install Python dependencies:
-
-bash
 
 pip install -r requirements.txt
 
 ## Usage
 
 Run the Flask web application:
-
-bash
 
 python app/app.py
 
@@ -140,8 +130,6 @@ The CI/CD pipeline is set up with GitHub Actions. It automatically builds and de
 ## Testing
 
 To run unit tests using pytest, execute the following command:
-
-bash
 
 pytest tests/test_model.py
 

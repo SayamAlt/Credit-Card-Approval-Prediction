@@ -63,9 +63,9 @@ def predict():
         conn.close()
 
         if pred == 0:
-            return render_template('index.html',prediction_text="Your credit card application won't be approved.")
+            return render_template('index.html',prediction_text="Your credit card application is likely to be rejected.")
         elif pred == 1:
-            return render_template('index.html',prediction_text="Bravo! Your credit card application will be approved.")
+            return render_template('index.html',prediction_text="Bravo! Your credit card application is likely to be approved.")
         
 if __name__ == '__main__':
     app.run(port=8000)

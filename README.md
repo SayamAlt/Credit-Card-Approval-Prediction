@@ -8,8 +8,8 @@ This project is a Credit Card Approval Prediction system that uses machine learn
 
 ## Table of Contents
 
+- [Overview](#overview)
 - [Context](#context)
-- [Project Structure](#project-structure)
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
 - [Usage](#usage)
@@ -19,6 +19,10 @@ This project is a Credit Card Approval Prediction system that uses machine learn
 - [Database Integration](#database-integration)
 - [Contributing](#contributing)
 - [License](#license)
+
+## Overview
+
+This project is a Credit Card Approval Prediction system that uses machine learning techniques to evaluate credit card applications and predict whether an applicant is likely to be approved or rejected. The project includes a Flask web application for making predictions, Continuous Integration/Continuous Deployment (CI/CD) setup using Docker and GitHub Actions, model testing with the pytest module, and automatic model retraining on every push to the repository.
 
 ## Context
 
@@ -56,39 +60,6 @@ Generally speaking, credit score cards are based on historical data. Once encoun
  
 At present, with the development of machine learning algorithms. More predictive methods such as Boosting, Random Forest, and Support Vector Machines have been introduced into credit card scoring. However, these methods often do not have good transparency. It may be difficult to provide customers and regulators with a reason for rejection or acceptance.
 
-## Project Structure
-
-The project has the following structure:
-
-credit-card-approval-prediction/
-│
-├── app/
-│   ├── app.py                # Flask web application
-│   ├── templates/            # HTML templates
-│   └── ...
-│
-├── data/
-│   ├── Application_Data.csv       # Historical credit application data
-│   └── ...
-│
-├── model/
-│   ├── model.pkl             # Pre-trained Extra Trees Classifier model
-│   └── ...
-│
-├── tests/
-│   ├── test_model.py         # Unit tests using pytest
-│   └── ...
-│
-├── requirements.txt         # Python dependencies
-│
-├── Dockerfile               # Docker containerization
-│
-├── retrain_script.py        # Model retraining script
-│
-├── README.md                # Project documentation
-│
-└── ...
-
 ## Prerequisites
 
 Before you begin, ensure you have met the following requirements:
@@ -105,21 +76,29 @@ Before you begin, ensure you have met the following requirements:
 
 Clone this repository:
 
+```bash
 git clone https://github.com/SayamAlt/credit-card-approval-prediction.git
+```
 
 Navigate to the project directory:
 
+```bash
 cd credit-card-approval-prediction
+```
 
 ## Install Python dependencies:
 
+```bash
 pip install -r requirements.txt
+```
 
 ## Usage
 
 Run the Flask web application:
 
+```bash
 python app/app.py
+```
 
 Access the web application at http://localhost:8000 in your web browser.
 
@@ -131,7 +110,9 @@ The CI/CD pipeline is set up with GitHub Actions. It automatically builds and de
 
 To run unit tests using pytest, execute the following command:
 
+```bash
 pytest tests/test_model.py
+```
 
 ## Model Retraining
 
